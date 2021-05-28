@@ -1,0 +1,18 @@
+version: '3'
+services:
+    php56-alpine:
+      container_name: php56-alpine
+      build:
+        context: .
+        dockerfile: Dockerfile
+      ports:
+        - "80:80"
+        - "443:443"
+      volumes:
+        - ./apache2/conf:/etc/apache2/sites-enabled
+        - ./apache2/www/html:/var/www/html
+        - ./apache2/logs:/var/log/apache2
+        - ./php/php.ini:/etc/php5/php.ini
+      environment:
+        - TZ=Asia/Jakarta
+      restart: always

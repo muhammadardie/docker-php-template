@@ -1,0 +1,7 @@
+# exclude everything
+php56/apache2/www/html/*
+php56-alpine/apache2/www/html/*
+
+# exception to the rule
+!php56/apache2/www/html/.gitkeep
+!php56-alpine/apache2/www/html/.gitkeep 
