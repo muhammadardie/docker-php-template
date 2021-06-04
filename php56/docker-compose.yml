@@ -6,13 +6,12 @@ services:
         context: .
         dockerfile: Dockerfile
       ports:
-        - "81:80"
-        - "444:443"
+        - "5600:80"
       volumes:
         - ./apache2/conf:/etc/apache2/sites-enabled
         - ./apache2/www/html:/var/www/html
         - ./apache2/logs:/var/log/apache2
-        - ./php/php.ini:/usr/local/etc/php/php.ini
+        - ./php/php.ini:/etc/php5/php.ini
       environment:
         - TZ=Asia/Jakarta
       restart: always
